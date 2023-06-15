@@ -11,7 +11,6 @@ const imagemin = require('gulp-imagemin'); // Minificar imagenes
 const notify = require('gulp-notify');
 const cache = require('gulp-cache');
 const clean = require('gulp-clean');
-const webp = require('gulp-webp');
 
 const paths = {
     sass: 'src/sass/**/*.scss',
@@ -46,21 +45,12 @@ function imagenes() {
         .pipe(notify({ message: 'Imagen Completada' }));
 }
 
-function versionWebp() {
-    return src(paths.imagenes)
-        .pipe(webp())
-        .pipe(dest('build/img'))
-        .pipe(notify({ message: 'Imagen Completada' }));
-}
-
-
 function watchArchivos() {
     watch(paths.sass, css);
     watch(paths.js, javascript);
     watch(paths.imagenes, imagenes);
-    watch(paths.imagenes, versionWebp);
 }
 
 exports.css = css;
 exports.watchArchivos = watchArchivos;
-exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos); 
+exports.default = parallel(css, javascript, imagenes, watchArchivos); 
