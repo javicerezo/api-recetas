@@ -1,0 +1,40 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
+
+.c-header {
+    &__contenedor {
+        margin: 0 auto;
+        padding: 0.5rem;
+        width: 100%;
+        @include m.flex (column, nowrap, center, center);
+        @include m.desktop {
+            padding: 1rem;
+            width: 80%;
+        }
+    }
+    &__cabecera {
+        width: 100%;
+        @include m.flex (column, nowrap, center, center);
+        @include m.tablet {
+            @include m.flex (row, nowrap, space-between, center);
+        }
+        &-izq {
+            @include m.flex(row, nowrap, center, center);
+        }
+    }
+    &__logo {
+        max-width: 15.6rem;
+        @include m.desktop {
+            max-width: 31.25rem;
+            margin-left: 1rem;
+        }
+    }
+    &__sociales {
+        @include m.desktop {
+            padding-right: 1rem;
+        }
+    }
+    &__nav {
+        width: 100%;
+    }
+}

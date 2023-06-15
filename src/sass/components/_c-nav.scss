@@ -1,0 +1,17 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
+
+.c-nav {
+    &__ul {
+        @include m.flex (row, nowrap, center, center);
+        @include m.tablet {
+            @include m.flex (row, nowrap, flex-start, center);
+        }
+    }
+    &__li {
+        padding: 1rem;
+    }
+    &__li {
+        font-size: 1.5em;
+    }
+}

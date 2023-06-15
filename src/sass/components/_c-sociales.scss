@@ -1,0 +1,35 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
+
+.c-sociales {
+    @include m.flex (row, nowrap, center, center);
+    &__li {
+        padding: 0.5rem;
+        font-size: 1em;
+        @include m.tablet {
+            padding: 0.8rem;
+            font-size: 1.3em;
+        }
+    }
+    &__li:first-child {
+        color: map-get(v.$colores, color-facebook);
+    }
+    &__li:nth-child(2) {
+        color: map-get(v.$colores, color-twitter);
+    }
+    &__li:nth-child(3) {
+        color: map-get(v.$colores, color-youtuve);
+    }
+    &__li:nth-child(4) {
+        color: map-get(v.$colores, color-pinterest);
+    }
+    &__li:nth-child(5) {
+        color: map-get(v.$colores, color-instagram);
+    }
+    &__li:nth-child(6) {
+        color: map-get(v.$colores, color-tik-tok);
+    }
+    &__li:nth-child(7) {
+        color: map-get(v.$colores, color-discord);
+    }
+}
