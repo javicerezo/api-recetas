@@ -1,0 +1,13 @@
+TODA ESTA ESTRUCTURA, SE ORGANIZA JERARQUICAMENTE DENTRO DE app.scss PARA QUE HAYA DIFERENTES NIVELES DE ESPECIFICIDAD A LA
+HORA DE APLICAR UN ESTILO QUE MODIFIQUE O QUE PREVALEZCA POR ENCIMA DE OTRO ESTILO CONCRETO.
+
+components, todos los componentes indivivuales que componen la pagina c-header, c-footer, c-...
+external, css externo para que funcione algo concreto como un spinner.
+generic, el reset (normalize) y estilos predefinidos concretos tipo box-sizing
+keyframes, para los keyframes de animaciones
+objetcs, son clases reutilizables (tratadas como un objeto) como o-container, o-bg, o-col,o-...
+scopes, para limitar o ampliar el scope de algo concreto
+settings, variables
+tags, estilos para tags
+tools, mixins y funciones
+utilities, arreglos hechos con !important (USAR LO MENOS POSIBLE)
