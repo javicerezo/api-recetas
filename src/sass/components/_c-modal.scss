@@ -1,0 +1,97 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
+
+.c-modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    &--mod {
+        opacity: 1;
+        visibility: visible;
+    }
+    &__screen{
+        @include m.position (fixed, 0, 0, 0, 0);
+        z-index: 201;
+        @include m.flex (column, nowrap, center, center);
+        background-color: #111111bd;
+    }
+    &__li {
+        @include m.flex (column, nowrap, center, center);
+        position: relative;
+        padding: 0.5rem;
+        background-color: map-get(v.$colores, color-secundario);
+        color: map-get(v.$colores, color-primario);
+        border-radius: 5px;
+        width: 95%;
+        height: 95%;
+        @include m.telefono-xl {
+            height: 80%;
+        }
+        @include m.tablet {
+            padding: 1rem;
+            width: 90%;
+            height: 90%;
+        }
+        @include m.desktop {
+            width: 70%;
+            height: 90%;
+        }
+        &-contenido {
+            width: 100%;
+            margin: 1rem 0;
+            padding: 0.5rem;
+            overflow-y: scroll;
+        }
+    }
+    &__h2 {
+        margin-top: 2rem;
+        font-size: 1.3em;
+        @include m.tablet {
+            font-size: 1.7em;
+            padding: 0.5rem;
+        }
+    }
+    &__img {
+        margin: 0 auto;
+        max-width: 12.5rem;
+        @include m.telefono-m {
+            max-width: 15.625rem;
+        }
+        @include m.telefono-xl {
+            max-width: 20rem;
+        }
+        @include m.tablet {
+            max-width: 23.75rem;
+        }
+    }
+    &__h3 {
+        margin: 1rem 0 0.5rem 0;
+        font-size: 1.1rem;
+        @include m.tablet {
+            font-size: 1.3rem;
+        }
+    }
+    &__p {
+        font-size: 0.9rem;
+        @include m.tablet {
+            font-size: 1rem;
+        }
+    }
+    &__close {
+        @include m.position (absolute, 1rem, null, null, 1rem);
+        font-size: 1.5rem;
+        cursor: pointer;
+        @include m.tablet {
+            @include m.position (absolute, 2rem, null, null, 2rem);
+            font-size: 2rem;
+        }
+    }
+    &__mensaje {
+        position: absolute;
+        bottom: 1.5rem;
+        font-size: 1.5em;
+        @include m.telefono-xl {
+            bottom: 3rem;
+        }
+    }
+}

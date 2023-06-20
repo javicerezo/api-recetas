@@ -8,7 +8,8 @@
         width: 100%;
         @include m.flex (column, nowrap, center, center);
         @include m.desktop {
-            padding: 1rem;
+            margin: 1rem auto;
+            padding: 0;
             width: 80%;
         }
     }
@@ -24,6 +25,9 @@
     }
     &__logo {
         max-width: 15.6rem;
+        @include m.telefono-xl {
+            max-width: 25rem;
+        }
         @include m.desktop {
             max-width: 31.25rem;
             margin-left: 1rem;

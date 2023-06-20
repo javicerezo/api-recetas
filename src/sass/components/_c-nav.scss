@@ -2,16 +2,57 @@
 @use 'tools/mixins' as m;
 
 .c-nav {
+    background-color: map-get(v.$colores, color-gris);
+    border-radius: 5px;
     &__ul {
-        @include m.flex (row, nowrap, center, center);
-        @include m.tablet {
-            @include m.flex (row, nowrap, flex-start, center);
-        }
+        @include m.flex (row, nowrap, flex-start, center);
+        position: relative;
     }
     &__li {
         padding: 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
     }
-    &__li {
+    &__li:first-child {
         font-size: 1.5em;
+        color: map-get(v.$colores, color-secundario-2);
+        background-color: map-get(v.$colores, color-primario-3);
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    &__subnav {
+        background-color: map-get(v.$colores, color-gris);
+        border-radius: 0 0 5px 5px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        height: 1px;
+        pointer-events: none;
+        @include m.position (absolute, 3.5244rem, null, null, 0);
+        transition: height 0.5s ease, opacity 1s ease, visibility 1s ease;
+        &--mod {
+            opacity: 1;
+            visibility: visible;
+            height: 27.9863rem;
+            pointer-events: auto;
+            @include m.telefono-xl {
+                height: 10rem;
+            }
+        }
+        &-contenedor {
+            @include m.flex (column, nowrap, center, flex-start);
+            @include m.telefono-xl {
+                @include m.grid (3, 0);
+            }
+        }
+        &-li {
+            padding: 0.3rem;
+            font-size: 1.1em;
+            @include m.flex (row, nowrap, center, center);
+            &:hover {
+                background-color: map-get(v.$colores, color-gris-claro);
+                border-radius: 5px;
+            }
+        }
     }
 }

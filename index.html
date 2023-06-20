@@ -37,21 +37,72 @@
             </div>
             <nav class="c-header__nav c-nav">
                 <ul class="c-nav__ul">
-                    <li class="c-nav__li"><i class="fa fa-bars"></i></li>
+                    <li class="c-nav__li js-nav__li-burger"><i class="fa fa-bars"></i></li>
                     <li class="c-nav__li">cocina</li>
-                    <ul class="c-nav__subnav c-subnav">
-                        <li class="c-subnav__li">Beef</li>
-                        <li class="c-subnav__li">chicken</li>
-                        <li class="c-subnav__li">Dessert</li>
-                        <li class="c-subnav__li">Lamb</li>
+                    <ul class="c-nav__subnav js-nav__subnav">
+                        <div class="c-nav__subnav-contenedor">
+
+                        </div>
                     </ul>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <footer class="c-footer">
+    <main>
+        <section class="c-buscador">
+            <div class="c-buscador__contenedor">
+                <h1 class="c-buscador__h1">cocina fácil</h1>
+                <div class="c-buscador__contenedor2">
+                    <h5 class="c-buscador__h5">Buscador de recetas:</h5>
+                    <form class="c-buscador__form">
+                        <fieldset class="c-buscador__form-fieldset">
+                            <label class="c-buscador__label" for="categorias">Categoría:</label>
+                            <div class="c-buscador__form-div">
+                                <select class="c-buscador__select" id="categorias">
+                                    <option>-- Seleccione --</option>
+                                </select>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
 
+        <section class="c-publicidad2">
+            <div class="c-publicidad2__contenedor">
+            
+            </div>
+        </section>    
+    </main>
+
+    <section class="c-resultados js-resultados">
+        <div class="c-resultados__contenedor js-resultados__contenedor">
+            
+            </ul>
+        </div>
+    </section>
+
+    <section class="c-modal js-modal">
+        
+    </section>
+
+    <footer class="c-footer">
+        <div class="c-footer__contenedor">
+            <div class="c-footer__texto">
+                <p>Todos los derechos reservados</p>
+            </div>
+            <div class="c-footer__sociales c-sociales">
+                    <li class="c-sociales__li"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li class="c-sociales__li"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li class="c-sociales__li"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li class="c-sociales__li"><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                    <li class="c-sociales__li"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="c-sociales__li"><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li class="c-sociales__li"><a href="#"><i class="fa-brands fa-discord"></i></a></li>
+            </div>
+        </div>
     </footer>
 
     <script src="src/js/app.js"></script>

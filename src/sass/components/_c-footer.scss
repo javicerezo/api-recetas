@@ -1,0 +1,25 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
+
+.c-footer {
+    &__contenedor {
+        background-color: map-get(v.$colores, color-primario-2);
+        color: map-get(v.$colores, color-secundario-2);
+        margin: 0 auto;
+        padding: 0.5rem;
+        width: 100%;
+        @include m.flex (column, nowrap, center, center);
+        @include m.tablet {
+            @include m.flex (row, nowrap, space-around, center);
+        }
+    }
+    &__texto {
+        font-size: 1em;
+        @include m.desktop {
+            font-size: 1.3em;
+        }
+    }
+    // &__sociales {
+
+    // }
+}

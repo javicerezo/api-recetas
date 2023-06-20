@@ -1,0 +1,86 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
+
+.c-buscador {
+    width: 90%;
+    @include m.desktop {
+        width: 70%;
+        margin: 0 1rem;
+    }
+    &__contenedor {
+        padding: 0.5rem;
+        @include m.desktop {
+            padding: 1rem;
+        }
+    }
+    &__h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0.5rem;
+        @include m.desktop {
+            padding: 1rem;
+        }
+    }
+    &__contenedor2 {
+        padding: 0.5rem;
+        margin-top: 1rem;
+        @include m.neomorfismo (map-get(v.$colores, color-secundario), map-get(v.$colores, color-secundario), 0.5rem, null, 0.5rem, map-get(v.$colores, color-primario-3), map-get(v.$colores, color-primario-3));
+        @include m.desktop {
+            padding: 1rem;
+        }
+    }
+    &__h5 {
+        margin-left: 0.5rem;
+        font-size: 1.2em;
+        font-style: italic;
+        @include m.desktop {
+            padding: 1rem;
+        }
+    }
+    &__form {
+        @include m.flex (column, nowrap, center, flex-start);
+        padding: 0.5rem;
+        @include m.tablet {
+            @include m.flex (row, nowrap, space-around, flex-end);
+            padding: 1rem;
+        }
+        &-fieldset {
+            padding: 0.5rem 0;
+            @include m.desktop {
+                padding: 1rem 0;
+            }
+        }
+        &-div {
+            border: 1px solid map-get(v.$colores, color-gris-claro);
+            border-radius: 5px;
+            width: 100%;
+            @include m.flex (row, nowrap, space-between, center);
+            i {
+                margin: 0 1rem;
+            }
+        }
+    }
+    &__label {
+        margin-bottom: 0.5rem;
+        @include m.desktop {
+            margin-bottom: 1rem;
+        }
+    }
+    &__select {
+        width: 100%;
+        margin-left: 1rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        @include m.desktop {
+            margin-left: 2rem;
+            padding: 1rem;
+        }
+    }
+    // &__boton {
+    //     margin: 0.5rem 0;
+    //     @include m.desktop {
+    //         margin: 1rem 0;
+    //     }
+    // }
+}

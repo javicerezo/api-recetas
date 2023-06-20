@@ -1,0 +1,92 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
+
+.c-resultados {
+    margin: 1rem 0;
+    @include m.desktop {
+        margin: 3rem 0;
+    }
+    &__contenedor {
+        width: 100%;
+        padding: 0.5rem;
+        @include m.desktop {
+            width: 80%;
+            padding: 1rem;
+            margin: 0 auto;
+        }
+    }
+    &__h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        font-style: italic;
+        margin-bottom: 1rem;
+        @include m.desktop {
+            margin-bottom: 2rem;
+        }
+    }
+    &__ul {
+        @include m.grid (1, 0.5rem);
+        @include m.tablet {
+            padding: 0.5rem;
+            @include m.grid (3, 1rem);
+        }
+        @include m.desktop {
+            padding: 0;
+        }
+    }
+    &__li {
+        padding: 0.5rem;
+        @include m.flex (row, nowrap, center, flex-start);
+        @include m.tablet {
+            padding: 0.5rem;
+            @include m.flex (column, nowrap, center, flex-start);
+        }
+        @include m.desktop {
+            padding: 1rem;
+        }
+        &-imagen {
+            max-width: 100px;
+            @include m.telefono-m {
+                max-width: 150px;
+            }
+            @include m.telefono-xl {
+                max-width: 200px;
+            }
+            @include m.tablet {
+                max-width: 25rem;
+            }
+        }
+        &-contenido {
+            padding-top: 0.5rem;
+            margin-left: 0.5rem;
+            margin-top: 0.5rem;
+            border-top: 1px solid #000;
+            width: 100%;
+            @include m.flex (column, nowrap, flex-start, flex-start);
+            @include m.telefono-m {
+                margin-left: 1rem;
+            }
+            @include m.telefono-xl {
+                padding-top: 1.5rem;
+                width: auto;
+            }
+            @include m.tablet {
+                width: 100%;
+                margin-left: 0;
+                padding-top: 1rem;
+                border-top: none;
+                @include m.flex (column, nowrap, center, center);
+            }
+        }
+    }
+    &__titulo {
+        font-size: 0.8em;
+        margin-bottom: 0.5rem;
+        @include m.telefono-xl{
+            font-size: 1.1em;
+        }
+        @include m.desktop {
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
+
+.c-boton {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 0.8em;
+    // background-color: red;
+    @include m.telefono-xl {
+        font-size: 1em;
+    }
+    @include m.desktop {
+        font-size: 1.2em;
+        padding: 1rem 3rem;
+    }
+}

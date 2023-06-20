@@ -8,12 +8,13 @@
     }
     &__contenedor {
         margin: 0 auto;
+        margin-top: 0.5rem;
         height: 15rem;
         width: 80%;
         @include m.flex (row, nowrap, center, center);
         border: 1px solid #000;
         &::before {
-            content: 'publicidad 1';
+            content: 'espacio publicitario 1';
             text-transform: uppercase;
             font-size: 1.5em;
             font-weight: bold;
