@@ -40,5 +40,18 @@
     }
     &__nav {
         width: 100%;
+        &-p {
+            margin-top: 1rem;
+            margin-left: 2rem;
+            @include m.tablet {
+                margin-left: 3rem;
+            }
+            a {
+                cursor: pointer;
+                padding: 1rem;
+                font-size: 1.3em;
+                background-color: map-get(v.$colores, color-morado);
+            }
+        }
     }
 }

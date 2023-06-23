@@ -8,6 +8,7 @@
         display: inline;
     }
     &__contenedor {
+        margin-bottom: 0.5rem;
         height: 344px;
         border: 1px solid #000;
         @include m.flex (column, nowrap, center, center);
@@ -16,6 +17,9 @@
             text-transform: uppercase;
             font-size: 1.2em;
             font-weight: bold;
+        }
+        @include m.desktop {
+            margin-bottom: 1rem;
         }
     }
 }

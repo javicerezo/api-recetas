@@ -25,22 +25,31 @@
     &__contenedor2 {
         padding: 0.5rem;
         margin-top: 1rem;
-        @include m.neomorfismo (map-get(v.$colores, color-secundario), map-get(v.$colores, color-secundario), 0.5rem, null, 0.5rem, map-get(v.$colores, color-primario-3), map-get(v.$colores, color-primario-3));
+        @include m.neomorfismo (map-get(v.$colores, color-secundario), map-get(v.$colores, color-primario-3), 0.5rem, null, 0.5rem, map-get(v.$colores, color-primario-3), map-get(v.$colores, color-primario-3));
         @include m.desktop {
             padding: 1rem;
         }
     }
     &__h5 {
         margin-left: 0.5rem;
-        font-size: 1.2em;
+        font-size: 1em;
         font-style: italic;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: map-get(v.$colores, color-primario);
         @include m.desktop {
+        margin-left: 1rem;
             padding: 1rem;
+            font-size: 1.2em;
         }
     }
     &__form {
         @include m.flex (column, nowrap, center, flex-start);
         padding: 0.5rem;
+        background-color: map-get(v.$colores, color-morado-transp);
+        color: map-get(v.$colores, color-primario);
+        border: 1px solid map-get(v.$colores, color-primario-3);
+        border-radius: 5px;
         @include m.tablet {
             @include m.flex (row, nowrap, space-around, flex-end);
             padding: 1rem;
@@ -52,35 +61,32 @@
             }
         }
         &-div {
-            border: 1px solid map-get(v.$colores, color-gris-claro);
+            background-color: map-get(v.$colores, color-secundario);
+            border: 1px solid map-get(v.$colores, color-primario-3);
             border-radius: 5px;
             width: 100%;
+            position: relative;
             @include m.flex (row, nowrap, space-between, center);
             i {
                 margin: 0 1rem;
+                cursor: pointer;
+                @include m.position (absolute, null, 0, null, null);
             }
         }
     }
     &__label {
         margin-bottom: 0.5rem;
-        @include m.desktop {
+        @include m.tablet{
+            font-size: 1.5em;
             margin-bottom: 1rem;
         }
     }
     &__select {
         width: 100%;
-        margin-left: 1rem;
-        padding: 0.5rem;
+        padding: 0.5rem 4rem 0.5rem 1rem;
         cursor: pointer;
-        @include m.desktop {
-            margin-left: 2rem;
-            padding: 1rem;
+        @include m.tablet {
+            padding: 1rem 4.5rem 1rem 1.5rem;
         }
     }
-    // &__boton {
-    //     margin: 0.5rem 0;
-    //     @include m.desktop {
-    //         margin: 1rem 0;
-    //     }
-    // }
 }

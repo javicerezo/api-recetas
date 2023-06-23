@@ -1,7 +1,7 @@
 @use 'settings/variables' as v;
 @use 'tools/mixins' as m;
 
-.c-resultados {
+.c-favoritos {
     margin: 1rem 0;
     @include m.desktop {
         margin: 3rem 0;

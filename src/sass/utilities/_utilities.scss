@@ -1,7 +1,25 @@
+@use 'settings/variables' as v;
+@use 'tools/mixins' as m;
 
-.u-flex {
-    display: flex !important;
-}
-.u-rotation {
-    transform: rotate(180deg);
+.u-mensaje {
+    font-size: 0.45em;
+    padding: 0.5rem;
+    &--error {
+        color: red;
+    }
+    &--exito {
+        color: green;
+    }
+    &--alerta {
+        color: yellow;
+    }
+    @include m.telefono-m {
+        font-size: 0.5em;
+    }
+    @include m.telefono-xl {
+        font-size: 0.6em;
+    }
+    @include m.tablet {
+        font-size: 0.8em;
+    }
 }

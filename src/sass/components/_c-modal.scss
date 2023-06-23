@@ -15,7 +15,7 @@
         @include m.flex (column, nowrap, center, center);
         background-color: #111111bd;
     }
-    &__li {
+    &__contenedor {
         @include m.flex (column, nowrap, center, center);
         position: relative;
         padding: 0.5rem;
@@ -38,13 +38,13 @@
         }
         &-contenido {
             width: 100%;
-            margin: 1rem 0;
+            margin: 1rem 0 2rem 0;
             padding: 0.5rem;
             overflow-y: scroll;
         }
     }
     &__h2 {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         font-size: 1.3em;
         @include m.tablet {
             font-size: 1.7em;
@@ -58,10 +58,7 @@
             max-width: 15.625rem;
         }
         @include m.telefono-xl {
-            max-width: 20rem;
-        }
-        @include m.tablet {
-            max-width: 23.75rem;
+            max-width: 17rem;
         }
     }
     &__h3 {
@@ -73,6 +70,32 @@
     }
     &__p {
         font-size: 0.9rem;
+        margin: 0.5rem;
+        @include m.tablet {
+            margin: 1rem;
+            font-size: 1rem;
+        }
+    }
+    &__ul {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        border: 1px solid map-get(v.$colores, color-primario-3);
+        @include m.grid (1, 0);
+        @include m.telefono-xl {
+            @include m.grid (3, 0.2rem);
+        }
+        @include m.tablet {
+            padding: 1rem;
+            margin: 1rem;
+            @include m.grid (3, 0.5rem);
+        }
+    }
+    &__li {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+        @include m.telefono-m {
+            margin-left: 3rem;
+        }
         @include m.tablet {
             font-size: 1rem;
         }
@@ -84,14 +107,6 @@
         @include m.tablet {
             @include m.position (absolute, 2rem, null, null, 2rem);
             font-size: 2rem;
-        }
-    }
-    &__mensaje {
-        position: absolute;
-        bottom: 1.5rem;
-        font-size: 1.5em;
-        @include m.telefono-xl {
-            bottom: 3rem;
         }
     }
 }
