@@ -9,6 +9,8 @@ const subnav = document.querySelector('.js-nav__subnav');
 
 
 //EVENTOS
+// evento para iniciar la app
+
 document.addEventListener('DOMContentLoaded', () => {
     try {
         iniciarApp();
@@ -26,7 +28,6 @@ resultadosContenedor.addEventListener('click', (e) => {
         seleccionarReceta(id, modalContenedor);    
     }
 })
-
 
 modalContenedor.addEventListener('click', (e) => {
     if(e.target.classList.contains('fa-xmark') || e.target.classList.contains('c-modal__screen')){
@@ -52,7 +53,3 @@ modalContenedor.addEventListener('click', (e) => {
         }
     }
 });
-
-    // evento para iniciar la app
-
-
