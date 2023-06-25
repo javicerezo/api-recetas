@@ -2,33 +2,45 @@
 @use 'tools/mixins' as m;
 
 .c-mensaje {
-    transition: transform 1s ease;
+    @include m.position (fixed, 5rem, 2rem, null, null);
+    z-index: 250;
     &__contenedor {
-        width: auto;
-        border: 1px solid map-get(v.$colores, color-gris);
+        border: 1px solid map-get(v.$colores, color-primario);
         border-radius: 10px;
         background-color: map-get(v.$colores, color-secundario);
-        @include m.position (fixed, 5rem, -18rem, null, null);
-        z-index: 250;
+        transition: all 0.7s ease;
+        @include m.position (relative, 5rem, -18rem, null, null);
+        visibility: hidden;
+        pointer-events: none;
+        width: 9.375rem;
+        height: auto;
         &--mod {
             right: 2rem;
-        }
-        @include m.telefono-xl {
-            
-        }
-        @include m.tablet {
-            width: 30%;
+            visibility: visible;
+            pointer-events: unset;
         }
         @include m.tablet {
-            width: 20%;
+            width: 15.625rem;
         }
     }
     &__p {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-    }
-    &__p:first-child {
-        background-color: map-get(v.$colores, color-rojo);
+        background-color: map-get(v.$colores, color-morado-transp);
         border-radius: 10px 10px 0 0;
+        padding: 0.5rem;
+        font-size: 0.8em;
+        @include m.tablet {
+            padding: 1rem;
+            font-size: 1em;
+        }
+    }
+    &__p-creada {
+        border-radius: 0 0 10px 10px;
+        font-size: 0.8em;
+        padding: 0.5rem;
+        background-color: map-get(v.$colores, color-secundario);
+        @include m.tablet {
+            padding: 1rem;
+            font-size: 1em;
+        }
     }
 }

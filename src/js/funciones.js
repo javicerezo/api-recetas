@@ -1,7 +1,6 @@
 // FUNCIONES
 //funcion para inciar la app
 function iniciarApp () {
-    // listadoFavoritos = JSON.parse(localStorage.getItem('listadoFavoritos')) || [];
     obtenerCategorias();
 }
 
@@ -123,10 +122,10 @@ function limpiarHTML (contenedor) {
 }
 
 function imprimirAlerta (contenedorMensaje, tipo, mensaje) {
-    contenedorMensaje.parentNode.classList.add('c-mensaje__contenedor--mod');
-    if(contenedorMensaje.childElementCount === 0) {
-        const p = document.createElement('p');
-        p.classList.add('u-mensaje');
+    contenedorMensaje.classList.add('c-mensaje__contenedor--mod');
+    if(contenedorMensaje.children[1].childElementCount === 0) {
+        const p = document.createElement('P');
+        p.classList.add('c-mensaje__p-creada', 'u-mensaje');
         p.textContent = mensaje;
         if (tipo === 'exito') {
             p.classList.add(`u-mensaje--${tipo}`);
@@ -137,11 +136,13 @@ function imprimirAlerta (contenedorMensaje, tipo, mensaje) {
         if (tipo === 'alerta') {
             p.classList.add(`u-mensaje--${tipo}`);
         }
-        contenedorMensaje.appendChild(p);
+        contenedorMensaje.children[1].appendChild(p);
         
         setTimeout((e) => {
-            limpiarHTML(contenedorMensaje);
-            contenedorMensaje.parentNode.classList.remove('c-mensaje__contenedor--mod');
+            contenedorMensaje.classList.remove('c-mensaje__contenedor--mod');
+        }, 4000);
+        setTimeout((e) => {
+            limpiarHTML(contenedorMensaje.children[1]);
         }, 5000);
     }
 }
@@ -162,23 +163,29 @@ function existeFavoritos (id) {
 }
 
 function cargarFavoritos (arrayfavoritos = []) {
-    const contenedorUl = document.createElement('UL');
-    contenedorUl.classList.add('c-favoritos__ul');
-    favoritosContenedor.appendChild(contenedorUl);
-    
-    arrayfavoritos.forEach( favorito => {
-        const {titulo, imagen, id} = favorito;
-        const li = document.createElement('LI');
-        li.classList.add('c-favoritos__li');
-        li.innerHTML = `
-            <div class="c-favoritos__li-imagen">
-                <img src=${imagen} alt="imagen receta ${imagen}">
-            </div>
-            <div class="c-favoritos__li-contenido">
-                <h3 class="c-favoritos__titulo">${titulo}</h3>
-                <button class="c-favoritos__boton c-boton js-boton" id=${id}>Ver receta</button>
-            </div>
-        `;
-        contenedorUl.appendChild(li);
-    });
+    if (arrayfavoritos.length == 0) {
+        const h5 = document.createElement('H5');
+        h5.classList.add('c-favoritos__h5');
+        h5.textContent = `¡Aún no has añadido nada a favoritos!`;
+        favoritosContenedor.appendChild(h5);
+    } else {
+        const contenedorUl = document.createElement('UL');
+        contenedorUl.classList.add('c-favoritos__ul');
+        favoritosContenedor.appendChild(contenedorUl);
+        arrayfavoritos.forEach( favorito => {
+            const {titulo, imagen, id} = favorito;
+            const li = document.createElement('LI');
+            li.classList.add('c-favoritos__li');
+            li.innerHTML = `
+                <div class="c-favoritos__li-imagen">
+                    <img src=${imagen} alt="imagen receta ${imagen}">
+                </div>
+                <div class="c-favoritos__li-contenido">
+                    <h3 class="c-favoritos__titulo">${titulo}</h3>
+                    <button class="c-favoritos__boton c-boton js-boton" id=${id}>Ver receta</button>
+                </div>
+            `;
+            contenedorUl.appendChild(li);
+        });
+    }
 }

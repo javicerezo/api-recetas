@@ -2,13 +2,13 @@
 const favoritosContenedor = document.querySelector('.js-favoritos__contenedor');
 const modalContenedorFavoritos = document.querySelector('.js-modal');
 const contenedorMensajeFavoritos = document.querySelector('.js-mensaje__contenedor');
-
+const listadoFavoritos = JSON.parse(localStorage.getItem('listadoFavoritos')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
     const listadoFavoritos = JSON.parse(localStorage.getItem('listadoFavoritos')) || [];
     cargarFavoritos(listadoFavoritos);
-
 })
+
 favoritosContenedor.addEventListener('click', (e) => {
     if(e.target.classList.contains('js-boton')){
         const id = e.target.getAttribute('id');

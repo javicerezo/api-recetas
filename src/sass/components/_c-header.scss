@@ -41,16 +41,22 @@
     &__nav {
         width: 100%;
         &-p {
-            margin-top: 1rem;
-            margin-left: 2rem;
+            // border: 1px solid map-get(v.$colores, color-primario);
+            padding: 0.5rem;
+            border-radius: 5px;
+            color: map-get(v.$colores, color-secundario);
+            background-color: map-get(v.$colores, color-morado-transp);
             @include m.tablet {
-                margin-left: 3rem;
+                padding: 1rem;
+                margin: 1rem 0;
             }
             a {
                 cursor: pointer;
-                padding: 1rem;
-                font-size: 1.3em;
-                background-color: map-get(v.$colores, color-morado);
+                font-size: 1em;
+                text-transform: uppercase;
+                @include m.tablet {
+                    font-size: 1.3em;
+                }
             }
         }
     }
