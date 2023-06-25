@@ -5,8 +5,12 @@ const contenedorMensajeFavoritos = document.querySelector('.js-mensaje__contened
 const listadoFavoritos = JSON.parse(localStorage.getItem('listadoFavoritos')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const listadoFavoritos = JSON.parse(localStorage.getItem('listadoFavoritos')) || [];
-    cargarFavoritos(listadoFavoritos);
+    try {
+        const listadoFavoritos = JSON.parse(localStorage.getItem('listadoFavoritos')) || [];
+        cargarFavoritos(listadoFavoritos);
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 favoritosContenedor.addEventListener('click', (e) => {
@@ -43,5 +47,3 @@ modalContenedorFavoritos.addEventListener('click', (e) => {
         }
     }
 });
-
-

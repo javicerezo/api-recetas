@@ -9,7 +9,13 @@ const subnav = document.querySelector('.js-nav__subnav');
 
 
 //EVENTOS
-
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        iniciarApp();
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 selectCategorias.addEventListener('change', seleccionarCategoria);
 
@@ -48,5 +54,5 @@ modalContenedor.addEventListener('click', (e) => {
 });
 
     // evento para iniciar la app
-document.addEventListener('DOMContentLoaded', iniciarApp);
+
 
