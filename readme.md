@@ -18,9 +18,8 @@ Ejemplo de un buscador de recetas de comida que consume los datos de una API y l
 ## Vista previa del proyecto
 Si quieres hechar un vistazo al proyecto, te recomiendo:
 
-![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/api-recetas/master/src/assets/img/api-recetas.png)
-![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/api-recetas/master/src/assets/img/api-recetas.png)
-![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/api-recetas/master/src/assets/img/api-recetas.png)
+![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/api-recetas/master/src/assets/img/api-recetas-2.png)
+![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/api-recetas/master/src/assets/img/api-recetas-3.png)
 
 ## Autor ✒️
 **JAVI CEREZO**
