@@ -5,7 +5,7 @@
 - [Haz click para ver el proyecto](https://javicerezo.github.io/api-recetas/) 🚀
 
 ## Descripción 📑
-Ejemplo de un buscador de recetas de comida que consume los datos de una API y los muestra por pantalla. Hecho con arquitectura BEMIT, los datos obtenidos son persistentes gracias a localStorage.
+Ejemplo de un buscador de recetas de comida que consume los datos de una API y los muestra por pantalla. Hecho con arquitectura BEMIT y programación asíncrona, los datos obtenidos son persistentes gracias a localStorage. Todas las recetas se actualizan de forma automática gracias al uso de la API.
 
 ## Tecnologías 🛠
 <!-- Iconos sacados de y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
