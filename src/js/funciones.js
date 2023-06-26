@@ -4,11 +4,15 @@ function iniciarApp () {
     obtenerCategorias();
 }
 
-function obtenerCategorias () {
+async function obtenerCategorias () {
     const url = 'https://www.themealdb.com/api/json/v1/1/categories.php';
-    fetch (url)
-        .then(respuesta => respuesta.json())
-        .then (resultado => mostrarCategorias(resultado.categories))
+        try {
+            const respuesta = await fetch(url);
+            const resultado = await respuesta.json();
+            mostrarCategorias(resultado.categories);
+        } catch (error) {
+            console.log(error);
+        }
 }
 
 function mostrarCategorias (categorias = []) {
@@ -21,12 +25,16 @@ function mostrarCategorias (categorias = []) {
     })
 }
 
-function seleccionarCategoria (e) {
+async function seleccionarCategoria (e) {
     const categoria = e.target.value;
     const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoria}`;
-    fetch (url)
-        .then(respuesta => respuesta.json())
-        .then(resultado => mostrarRecetas(resultado.meals));
+    try {
+        const respuesta = await fetch(url);
+        const resultado = await respuesta.json();
+        mostrarRecetas(resultado.meals);
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 function mostrarRecetas (recetas = []) {
@@ -60,11 +68,15 @@ function mostrarRecetas (recetas = []) {
     })
 }
 
-function seleccionarReceta (id, contenedorModal) {
+async function seleccionarReceta (id, contenedorModal) {
     const url = `https://themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
-    fetch (url)
-        .then ( respuesta => respuesta.json())
-        .then ( resultado => mostrarRecetaModal(resultado.meals[0], contenedorModal))
+    try {
+        const respuesta = await fetch(url);
+        const resultado = await respuesta.json();
+        mostrarRecetaModal(resultado.meals[0], contenedorModal);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 function mostrarRecetaModal (receta, contenedor) {

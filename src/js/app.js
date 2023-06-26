@@ -9,19 +9,16 @@ const subnav = document.querySelector('.js-nav__subnav');
 
 
 //EVENTOS
-// evento para iniciar la app
 
+// evento para iniciar la app
 document.addEventListener('DOMContentLoaded', () => {
-    try {
-        iniciarApp();
-    } catch (error) {
-        console.log(error);
-    }
+    iniciarApp();
 });
 
+//evento para rellenar el select desde la peticion a la API
 selectCategorias.addEventListener('change', seleccionarCategoria);
 
-
+// evento para mostrar cada receta
 resultadosContenedor.addEventListener('click', (e) => {
     if(e.target.classList.contains('js-boton')){
         const id = e.target.getAttribute('id');
@@ -29,6 +26,7 @@ resultadosContenedor.addEventListener('click', (e) => {
     }
 })
 
+// evento para el modal de cada receta
 modalContenedor.addEventListener('click', (e) => {
     if(e.target.classList.contains('fa-xmark') || e.target.classList.contains('c-modal__screen')){
         limpiarHTML(modalContenedor);
