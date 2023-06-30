@@ -1,17 +1,14 @@
 {
-  "name": "portafolio_javicerezo",
+  "name": "api-recetas",
   "version": "1.0.0",
-  "description": "Portafolio Web profesional de Javi Cerezo",
+  "description": "API para recetas de cocina",
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp"
   },
   "keywords": [
     "SASS",
-    "JAVASCRIPT",
-    "PHP",
-    "MYSQL",
-    "GULP"
+    "JAVASCRIPT"
   ],
   "author": "Javier Cerezo",
   "license": "ISC",
