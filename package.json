@@ -2,7 +2,7 @@
   "name": "api-recetas",
   "version": "1.0.0",
   "description": "API para recetas de cocina",
-  "main": "gulpfile.js",
+  "main": "index.html",
   "scripts": {
     "dev": "gulp"
   },
