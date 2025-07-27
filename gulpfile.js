@@ -41,7 +41,7 @@ function javascript() {
 function imagenes() {
     return src(paths.imagenes)
         .pipe(cache(imagemin({ optimizationLevel: 3 })))
-        .pipe(dest('build/img'))
+        .pipe(dest('public/assets/imgs'))
         .pipe(notify({ message: 'Imagen Completada' }));
 }
 
